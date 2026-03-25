@@ -1,0 +1,20 @@
+.static-page { padding-top: 80px; }
+.about-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+.about-hero-left { background: var(--deep); display: flex; flex-direction: column; justify-content: center; padding: 80px 60px; position: relative; overflow: hidden; }
+.about-hero-left::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=900&q=85') center/cover; opacity: .18; }
+.about-hero-left > * { position: relative; z-index: 1; }
+.about-hero-right { overflow: hidden; }
+.about-hero-right img { width: 100%; height: 100%; object-fit: cover; }
+.about-values { background: var(--white); padding: 90px 0; }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+.value-card { text-align: center; padding: 40px 28px; border: 1px solid var(--cream); }
+.value-icon { font-size: 36px; margin-bottom: 18px; }
+.value-title { font-family: var(--font-display); font-size: 22px; font-weight: 300; margin-bottom: 12px; }
+.value-desc { font-size: 13px; line-height: 1.9; color: var(--muted); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+@media (max-width: 768px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-hero-right { display: none; }
+  .values-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}

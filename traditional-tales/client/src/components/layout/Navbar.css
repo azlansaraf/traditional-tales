@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; padding: 24px 48px;
+  transition: background .5s, padding .5s, box-shadow .5s;
+}
+.navbar.scrolled {
+  background: rgba(248,245,240,.97);
+  backdrop-filter: blur(20px);
+  padding: 14px 48px;
+  border-bottom: 1px solid rgba(201,187,168,.5);
+  box-shadow: 0 2px 24px rgba(46,35,25,.06);
+}
+
+/* Left */
+.nav-left { display: flex; gap: 26px; list-style: none; align-items: center; }
+.nav-left a {
+  font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--white); text-decoration: none; position: relative;
+  padding-bottom: 3px; white-space: nowrap; transition: color .3s;
+}
+.navbar.scrolled .nav-left a { color: var(--charcoal); }
+.nav-left a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--gold); transition: width .3s;
+}
+.nav-left a:hover::after, .nav-left a.active::after { width: 100%; }
+.nav-left a.active { color: var(--gold); }
+.navbar.scrolled .nav-left a.active { color: var(--accent); }
+
+/* Logo */
+.nav-logo {
+  font-family: var(--font-display); font-size: 17px; font-weight: 300;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--white); text-align: center; white-space: nowrap;
+  transition: color .3s;
+}
+.navbar.scrolled .nav-logo { color: var(--charcoal); }
+.logo-dot { color: var(--gold); }
+
+/* Right */
+.nav-right { display: flex; gap: 14px; align-items: center; justify-content: flex-end; }
+.nav-icon-btn {
+  background: none; border: none; color: var(--white);
+  font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+  position: relative; padding: 6px 2px; transition: color .3s; white-space: nowrap;
+}
+.navbar.scrolled .nav-icon-btn { color: var(--charcoal); }
+.nav-icon-btn:hover { color: var(--gold); }
+.wishlist-btn { position: relative; }
+.nav-badge {
+  position: absolute; top: -2px; right: -8px;
+  width: 16px; height: 16px; background: var(--gold); color: var(--deep);
+  font-size: 8px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+}
+.cart-nav-btn {
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  background: rgba(255,255,255,.15); color: var(--white);
+  padding: 9px 18px; border: 1px solid rgba(255,255,255,.35);
+  transition: all .3s; display: flex; align-items: center; gap: 7px;
+  backdrop-filter: blur(8px);
+}
+.navbar.scrolled .cart-nav-btn { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+.cart-nav-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--deep); }
+
+/* Account dropdown */
+.nav-account { position: relative; }
+.account-dropdown {
+  display: none; position: absolute; top: 100%; right: 0;
+  background: var(--white); min-width: 160px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  padding: 8px 0; z-index: 200;
+}
+.nav-account:hover .account-dropdown { display: block; }
+.account-dropdown a, .account-dropdown button {
+  display: block; width: 100%; text-align: left; padding: 10px 20px;
+  font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--charcoal); background: none; border: none;
+  transition: background .2s; white-space: nowrap;
+}
+.account-dropdown a:hover, .account-dropdown button:hover { background: var(--cream); color: var(--accent); }
+
+/* Hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--white); display: block; transition: background .3s; }
+.navbar.scrolled .hamburger span { background: var(--charcoal); }
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--deep); z-index: 900;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 28px;
+}
+.mobile-menu a, .mobile-menu button {
+  font-family: var(--font-display); font-size: 28px; font-weight: 300;
+  color: var(--ivory); background: none; border: none;
+  letter-spacing: .2em; transition: color .3s;
+}
+.mobile-menu a:hover, .mobile-menu button:hover { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .navbar { grid-template-columns: 1fr auto; padding: 18px 24px; }
+  .nav-left { display: none; }
+  .hamburger { display: flex; }
+  .cart-nav-btn { display: none; }
+}

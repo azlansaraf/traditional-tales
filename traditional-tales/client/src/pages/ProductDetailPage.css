@@ -1,0 +1,46 @@
+.detail-page { padding: 120px 0 80px; background: var(--ivory); }
+.breadcrumb { font-size: 11px; letter-spacing: .15em; color: var(--muted); margin-bottom: 40px; display: flex; align-items: center; gap: 10px; }
+.breadcrumb a { color: var(--muted); transition: color .3s; }
+.breadcrumb a:hover { color: var(--charcoal); }
+.breadcrumb span { color: var(--sand); }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.detail-images { display: grid; grid-template-columns: 80px 1fr; gap: 12px; }
+.detail-thumbnails { display: flex; flex-direction: column; gap: 10px; }
+.detail-thumb { width: 80px; height: 100px; overflow: hidden; border: 2px solid transparent; transition: border-color .3s; }
+.detail-thumb.active { border-color: var(--gold); }
+.detail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.detail-main-img { overflow: hidden; aspect-ratio: 3/4; background: var(--cream); }
+.detail-main-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.detail-main-img:hover img { transform: scale(1.04); }
+.detail-info { position: sticky; top: 100px; }
+.detail-label { font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.detail-name { font-family: var(--font-display); font-size: clamp(28px,3vw,42px); font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 12px; }
+.detail-price { font-size: 22px; color: var(--charcoal); margin-bottom: 8px; }
+.old-price { font-size: 16px; color: var(--sand); text-decoration: line-through; margin-right: 12px; }
+.detail-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 22px; }
+.stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+.rating-count { font-size: 12px; color: var(--muted); }
+.detail-desc { font-size: 13px; line-height: 2; color: var(--muted); margin-bottom: 26px; }
+.option-label { font-size: 10px; letter-spacing: .35em; text-transform: uppercase; color: var(--charcoal); display: block; margin-bottom: 12px; }
+.option-label strong { color: var(--accent); }
+.color-options { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.color-pill { padding: 7px 16px; border: 1px solid var(--sand); background: none; font-size: 11px; letter-spacing: .08em; transition: all .3s; }
+.color-pill.active, .color-pill:hover { border-color: var(--charcoal); background: var(--charcoal); color: var(--ivory); }
+.size-options { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+.size-btn { width: 52px; height: 42px; border: 1px solid var(--sand); background: none; font-size: 11px; letter-spacing: .1em; transition: all .3s; text-transform: uppercase; }
+.size-btn.active, .size-btn:hover { border-color: var(--charcoal); background: var(--charcoal); color: var(--ivory); }
+.qty-row { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
+.qty-ctrl { display: flex; align-items: center; border: 1px solid var(--sand); }
+.qty-btn { width: 40px; height: 42px; background: none; border: none; font-size: 18px; transition: background .2s; }
+.qty-btn:hover { background: var(--cream); }
+.qty-val { width: 50px; height: 42px; text-align: center; border-left: 1px solid var(--sand); border-right: 1px solid var(--sand); font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.stock-note { font-size: 11px; color: var(--success); letter-spacing: .08em; }
+.detail-cta { display: flex; gap: 12px; margin-bottom: 24px; }
+.btn-add-detail { flex: 1; font-size: 11px; letter-spacing: .25em; text-transform: uppercase; background: var(--charcoal); color: var(--ivory); border: none; padding: 17px; transition: background .3s; }
+.btn-add-detail:hover:not(:disabled) { background: var(--accent); }
+.btn-add-detail:disabled { opacity: .5; }
+.btn-wish-detail { width: 54px; background: var(--cream); border: 1px solid var(--sand); font-size: 18px; transition: all .3s; }
+.btn-wish-detail:hover { background: var(--charcoal); color: var(--ivory); }
+.btn-wish-detail.active { background: var(--danger); border-color: var(--danger); color: var(--white); }
+.detail-meta { font-size: 11px; color: var(--muted); letter-spacing: .1em; line-height: 2.3; border-top: 1px solid var(--cream); padding-top: 20px; }
+@media (max-width: 768px) { .detail-grid { grid-template-columns: 1fr; gap: 36px; } .detail-images { grid-template-columns: 60px 1fr; } .detail-info { position: static; } }
